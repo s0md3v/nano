@@ -1,5 +1,5 @@
 # nano
-Nano is a family of PHP webshell code golfed to be extremely stealthy and efficient.\
+Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient.\
 Put it on watch maybe, I will continue to upload more webshells in here.
 
 ### Nano
