@@ -1,2 +1,1 @@
-*.py linguist-language=JavaScript
-*.py linguist-vendored=JavaScript
+* linguist-language=PHP
